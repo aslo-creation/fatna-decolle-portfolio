@@ -1,33 +1,163 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { MapPin, Calendar, Mail, Phone, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MapPin, Calendar, Mail, Phone, ExternalLink, Download, MessageCircle, Sparkles } from "lucide-react";
+import heroImage from "@/assets/fatna-hero.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      {/* Hero Section */}
-      <section className="py-20 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-6xl font-extralight tracking-tight mb-6">
-              <span className="gradient-text">Fatna</span>
-            </h1>
-            <h2 className="text-2xl font-light text-muted-foreground mb-8">
-              Chargée d'Affaires Commerciales
-            </h2>
-          </div>
-          
-          <div className="elegant-card max-w-3xl mx-auto text-left space-y-4 text-lg leading-relaxed">
-            <p className="text-xl font-medium mb-4">✨ Moi, c'est Fatna. Et je suis prête à faire décoller vos ventes.</p>
-            <p>📢 <strong>À la recherche d'une alternance dès septembre !</strong></p>
-            <p>🎓 Étudiante en Bac +3 Chargée d'affaires commerciales, je suis à la recherche d'une alternance dans le commerce, la vente, ou le business development.</p>
-            <p>💼 Déjà armée d'expériences concrètes sur le terrain (closing, tunnel de vente, relation client haut de gamme…), je veux continuer à apprendre au contact du réel, dans une entreprise ambitieuse et stimulante.</p>
-            <p>💡 Sérieuse, motivée, avec un vrai sens du contact — je suis prête à m'investir et à faire la différence.</p>
-            <div className="grid md:grid-cols-2 gap-4 pt-4 text-base">
-              <p>📅 <strong>Rythme :</strong> 4 jours en entreprise / 1 jour à l'école</p>
-              <p>📍 <strong>Zone :</strong> Île-de-France (ou à distance selon le poste)</p>
+    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/10 to-accent/20">
+      {/* Hero Header Section */}
+      <section className="relative overflow-hidden">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10"></div>
+        
+        <div className="relative py-20 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary">
+                    <Sparkles className="w-4 h-4" />
+                    Disponible en alternance dès septembre
+                  </div>
+                  
+                  <h1 className="text-5xl lg:text-6xl font-extralight tracking-tight">
+                    <span className="block text-foreground/80">Bonjour, moi c'est</span>
+                    <span className="gradient-text font-light">Fatna</span>
+                  </h1>
+                  
+                  <h2 className="text-2xl lg:text-3xl font-light text-muted-foreground">
+                    Chargée d'Affaires Commerciales
+                  </h2>
+                  
+                  <p className="text-xl text-foreground/80 leading-relaxed max-w-lg">
+                    Étudiante en Bac +3, je transforme les prospects en clients et les objectifs en résultats. 
+                    <strong className="text-primary"> Prête à faire décoller vos ventes.</strong>
+                  </p>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-300">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Discutons de votre projet
+                  </Button>
+                  
+                  <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 px-8 py-6 text-lg rounded-xl transition-all duration-300">
+                    <Download className="w-5 h-5 mr-2" />
+                    Télécharger mon CV
+                  </Button>
+                </div>
+
+                {/* Key Stats */}
+                <div className="grid grid-cols-3 gap-6 pt-8">
+                  <div className="text-center">
+                    <div className="text-2xl font-light text-primary">3+</div>
+                    <div className="text-sm text-muted-foreground">Années d'expérience</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-light text-primary">1200€</div>
+                    <div className="text-sm text-muted-foreground">Panier moyen réalisé</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-light text-primary">100%</div>
+                    <div className="text-sm text-muted-foreground">Motivée</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Image */}
+              <div className="relative">
+                <div className="relative z-10">
+                  <img 
+                    src={heroImage} 
+                    alt="Fatna - Chargée d'Affaires Commerciales" 
+                    className="w-full max-w-md mx-auto rounded-3xl shadow-2xl object-cover aspect-[3/4]"
+                  />
+                  
+                  {/* Floating badge */}
+                  <div className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm border border-primary/20 rounded-2xl p-4 shadow-xl">
+                    <div className="text-center">
+                      <div className="text-lg font-semibold text-primary">Top performer</div>
+                      <div className="text-sm text-muted-foreground">Yves Rocher</div>
+                    </div>
+                  </div>
+
+                  {/* Floating info card */}
+                  <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm border border-primary/20 rounded-2xl p-4 shadow-xl">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <div>
+                        <div className="text-sm font-medium">Disponible maintenant</div>
+                        <div className="text-xs text-muted-foreground">4j/semaine en entreprise</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Background decoration */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl transform rotate-3 scale-105 -z-10"></div>
+              </div>
             </div>
-            <p className="text-center pt-4 text-lg">📩 <strong>Vous recrutez ? Écrivez-moi ou partagez ce profil autour de vous</strong> 🙌</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition Section */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="elegant-card">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="space-y-2">
+                <div className="text-3xl">🎯</div>
+                <h3 className="font-medium">Closing Expert</h3>
+                <p className="text-sm text-muted-foreground">Spécialisée dans la conversion et la finalisation des ventes</p>
+              </div>
+              
+              <div className="space-y-2">
+                <div className="text-3xl">🚀</div>
+                <h3 className="font-medium">Growth Mindset</h3>
+                <p className="text-sm text-muted-foreground">Toujours prête à relever de nouveaux défis commerciaux</p>
+              </div>
+              
+              <div className="space-y-2">
+                <div className="text-3xl">🤝</div>
+                <h3 className="font-medium">Relation Client+</h3>
+                <p className="text-sm text-muted-foreground">Excellence en service client haut de gamme</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="section-title text-center">Pourquoi me choisir ?</h2>
+          <div className="elegant-card text-lg leading-relaxed space-y-6">
+            <p>🎓 <strong>Étudiante en Bac +3 Chargée d'affaires commerciales</strong>, je recherche une alternance dans le commerce, la vente, ou le business development qui me permettra de mettre en pratique mes compétences tout en continuant d'apprendre.</p>
+            
+            <p>💼 <strong>Expérience terrain solide :</strong> Déjà armée d'expériences concrètes (closing, tunnel de vente, relation client haut de gamme), je maîtrise les fondamentaux et suis prête à les appliquer dans un environnement stimulant.</p>
+            
+            <p>💡 <strong>Profil complet :</strong> Sérieuse, motivée, avec un vrai sens du contact et une capacité d'adaptation qui me permet de m'intégrer rapidement dans une équipe.</p>
+
+            <div className="grid md:grid-cols-2 gap-6 pt-6 bg-secondary/20 rounded-xl p-6">
+              <div>
+                <h4 className="font-semibold mb-2 text-primary">📅 Modalités</h4>
+                <p className="text-base">4 jours en entreprise / 1 jour à l'école</p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2 text-primary">📍 Localisation</h4>
+                <p className="text-base">Île-de-France ou télétravail selon le poste</p>
+              </div>
+            </div>
+            
+            <div className="text-center pt-6">
+              <p className="text-xl font-medium text-primary">Vous recrutez ? Contactez-moi dès maintenant ! 🎯</p>
+            </div>
           </div>
         </div>
       </section>
