@@ -40,15 +40,19 @@ const Index = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-300">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Discutons de votre projet
-                  </Button>
+                  <a href="mailto:d.fanna03@gmail.com">
+  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-300">
+    <MessageCircle className="w-5 h-5 mr-2" />
+    Discutons de votre projet
+  </Button>
+</a>
                   
-                  <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 px-8 py-6 text-lg rounded-xl transition-all duration-300">
-                    <Download className="w-5 h-5 mr-2" />
-                    Télécharger mon CV
-                  </Button>
+                 <a href="https://skooleo.cvdesignr.com/p/4ro0VA2LEejvG8E" target="_blank" rel="noopener noreferrer">
+  <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 px-8 py-6 text-lg rounded-xl transition-all duration-300">
+    <Download className="w-5 h-5 mr-2" />
+    Télécharger mon CV
+  </Button>
+</a>
                 </div>
 
                 {/* Key Stats */}
