@@ -320,8 +320,8 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground">2025–2026</p>
                 </div>
                 <div>
-                  <h4 className="font-medium">BTS NDRC</h4>
-                  <p className="text-sm text-muted-foreground">Négociation & Digitalisation de la Relation Client</p>
+                  <h4 className="font-medium">Bac+2 NTC</h4>
+                  <p className="text-sm text-muted-foreground">Négociateur Technico-Commercial</p>
                   <p className="text-sm text-muted-foreground">2024–2025</p>
                 </div>
                 <div>
