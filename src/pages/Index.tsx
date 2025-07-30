@@ -1,10 +1,20 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Calendar, Mail, Phone, ExternalLink, Download, MessageCircle, Sparkles } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { MapPin, Calendar, Mail, Phone, ExternalLink, Download, MessageCircle, Sparkles, Copy } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 import heroImage from "/lovable-uploads/45c1314d-44c5-4a12-b8e1-a1d448169f56.png";
 
 const Index = () => {
+  const copyToClipboard = (email: string) => {
+    navigator.clipboard.writeText(email);
+    toast({
+      title: "Email copié !",
+      description: "L'adresse email a été copiée dans votre presse-papiers.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/10 to-accent/20">
       {/* Hero Header Section */}
@@ -40,12 +50,42 @@ const Index = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="mailto:d.fanna03@gmail.com">
-  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-300">
-    <MessageCircle className="w-5 h-5 mr-2" />
-    Discutons de votre projet
-  </Button>
-</a>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)] transition-all duration-300">
+                        <MessageCircle className="w-5 h-5 mr-2" />
+                        Discutons de votre projet
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md">
+                      <DialogHeader>
+                        <DialogTitle>Contactez-moi</DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                          <Mail className="w-5 h-5 text-primary" />
+                          <span className="text-lg">d.fanna03@gmail.com</span>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button 
+                            onClick={() => copyToClipboard("d.fanna03@gmail.com")}
+                            variant="outline" 
+                            size="sm"
+                            className="flex items-center gap-2"
+                          >
+                            <Copy className="w-4 h-4" />
+                            Copier
+                          </Button>
+                          <Button asChild size="sm">
+                            <a href="mailto:d.fanna03@gmail.com">
+                              <Mail className="w-4 h-4 mr-2" />
+                              Ouvrir mail
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                   
                  <a href="https://skooleo.cvdesignr.com/p/4ro0VA2LEejvG8E" target="_blank" rel="noopener noreferrer">
   <Button variant="outline" size="lg" className="border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 px-8 py-6 text-lg rounded-xl transition-all duration-300">
