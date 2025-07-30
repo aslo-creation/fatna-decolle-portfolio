@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, Mail, Phone, ExternalLink, Download, MessageCircle, Sparkles } from "lucide-react";
-import heroImage from "@/assets/fatna-hero.jpg";
+import heroImage from "/lovable-uploads/45c1314d-44c5-4a12-b8e1-a1d448169f56.png";
 
 const Index = () => {
   return (
@@ -340,22 +340,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 text-center border-t border-border/30">
-        <div className="max-w-2xl mx-auto">
-          <p className="text-muted-foreground mb-4">Prête à rejoindre votre équipe</p>
-          <div className="flex justify-center items-center gap-6 text-sm">
-            <a href="mailto:contact@fatna.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Mail className="w-4 h-4" />
-              contact@fatna.com
-            </a>
-            <a href="tel:+33123456789" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone className="w-4 h-4" />
-              +33 1 23 45 67 89
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
